@@ -99,8 +99,9 @@
     <main>
         <section>
             
-            <a href="/About"><h2>The homme Pages</h2></a>
+            <a href="{{ route('dev') }}"><h2>The dev Pages</h2></a>
             <p>This is a simple page that crated by html css </p>
+            <p>I come from the page {{ $name ?? 'default' }}</p>
         </section>
     </main>
 

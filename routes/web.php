@@ -76,3 +76,11 @@ Route::get('/Calcul',function(){
 Route::get('/HommePage',function(){
     return view('HommePage');
 })->name('home') ;
+
+Route::get('/dev',function(){
+    return view('dev', ['name' => url()->previous()]);
+})->name('dev') ;
+
+Route::get('Tri',function(){
+    return view('Tri', ['name' => url()->previous()]);
+})->name('Tri') ;

@@ -135,7 +135,9 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/About">About</a></li>
                 <li><a href="/ContactPage">Contact</a></li>
-                <li><a href="/Calcul">Calcul</a></li>
+                <li><a href="/Calcul">Calcul</a></li>  
+                <li><a href="{{ route('dev') }}">dev</a></li>  
+                <li><a href="{{ route('Tri') }}">Tri</a></li> 
             </ul>
         </nav>
     </header>
