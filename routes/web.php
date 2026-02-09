@@ -70,3 +70,9 @@ Route::get('/Infos1/{nom?}/{age?}', function($nom = null, $age = 0){
 Route::get('/Calcul',function(){
     return view('Calcul',['x'=>10,'y'=>9,'operation'=>'+']);
 })->name('Calcul') ;
+
+// vieu href lien redirection to an other link
+
+Route::get('/HommePage',function(){
+    return view('HommePage');
+})->name('home') ;

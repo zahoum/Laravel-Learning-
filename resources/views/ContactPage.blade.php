@@ -115,6 +115,16 @@
             bottom: 0;
             width: 100%;
         }
+        #back-to-home{
+            align-self: flex-start;
+            margin-bottom: 1rem;
+            color: #007bff;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border: 2px solid #007bff;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
     </style>
 </head>
 <body>
@@ -131,6 +141,7 @@
     </header>
 
     <main>
+        <a id="back-to-home" href='{{ route('home') }}' >Back to home</a>
         <h2>Get in Touch</h2>
         <p>Feel free to send me a message. I'll get back to you as soon as possible!</p>
         <form class="contact-form" action="/contact" method="POST">

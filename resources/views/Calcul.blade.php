@@ -126,6 +126,16 @@
             bottom: 0;
             width: 100%;
         }
+        #back-to-home{
+            align-self: flex-start;
+            margin-bottom: 1rem;
+            color: #007bff;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border: 2px solid #007bff;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
     </style>
 </head>
 <body>
@@ -142,6 +152,7 @@
     </header>
 
     <main>
+        <a id="back-to-home" href='{{ route('home') }}' >Back to home</a>
         <div>
         
             @isset($operation)
@@ -167,9 +178,12 @@
         <br>
         
         </div>
+
     </main>
+            
     <footer>
         <p>&copy; 2025 . All rights reserved.</p>
+        <p> in this page you need to change the value of x and y and the operation in web.php to get the result of the operation in the line 70 </p>
     </footer>
 </body>
 </html>
