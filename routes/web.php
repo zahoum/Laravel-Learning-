@@ -84,3 +84,4 @@ Route::get('/dev',function(){
 Route::get('Tri',function(){
     return view('Tri', ['name' => url()->previous()]);
 })->name('Tri') ;
+

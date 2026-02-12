@@ -86,12 +86,12 @@
         <h1>Welcome </h1>
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
+                <li><a href="{{ route('home') }}">Home</a></li>
                 <li><a href="/About">About</a></li>
                 <li><a href="/ContactPage">Contact</a></li>
                 <li><a href="/Calcul">Calcul</a></li>  
-                <li><a href="{{ route('dev') }}">dev</a></li>  
-                <li><a href="{{ route('Tri') }}">Tri</a></li>  
+                <li><a href="{{ route('dev',['from'=>'home page']) }}">dev</a></li>
+                <li><a href="{{ route('Tri',['from'=>'home page']) }}">Tri</a></li>  
             </ul>
         </nav>
     </header>
@@ -100,7 +100,11 @@
         <section>
             
             <a href="/About"><h2>The homme Pages</h2></a>
-            <p>This is a simple page that crated by html css </p>
+            <p>This is a simple page that crated by html css and php blade </p>
+            <p>here i learn react from the first to the end one by one</p>
+            @if(request('from'))
+                <p>i come from {{ request('from') }}</p>
+            @endif
         </section>
     </main>
 

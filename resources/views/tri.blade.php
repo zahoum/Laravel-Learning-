@@ -86,12 +86,12 @@
         <h1>Welcome </h1>
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
+                <li><a href="{{ route('home',['from'=>'tri']) }}">Home</a></li>
                 <li><a href="/About">About</a></li>
                 <li><a href="/ContactPage">Contact</a></li>
                 <li><a href="/Calcul">Calcul</a></li>  
-                <li><a href="{{ route('dev') }}">dev</a></li>  
-                <li><a href="{{ route('Tri') }}">Tri</a></li>  
+                <li><a href="{{ route('dev',['from'=>'tri']) }}">dev</a></li>  
+                <li><a href="{{ route('Tri') }}">Tri</a>tri</li>  
             </ul>
         </nav>
     </header>
@@ -99,10 +99,9 @@
     <main>
         <section>
             
-            <a href="{{ route('Tri') }}"><h2>The tri page</h2></a>
-            <p>This is a simple page that crated by html css </p>
-            <p>I come from the page {{ $name ?? 'default' }}</p>
-        </section>
+            @if(request('from'))
+                <p> i came from {{ request('from') }} </p>
+            @endif
     </main>
 
     <footer>
