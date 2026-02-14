@@ -165,13 +165,12 @@
                     @case('-')
                         <p>the result of plus operation is : {{$x - $y}}</p>
                         @break
-                    @case('*')
-                        <p>the result of plus operation is : {{$x * $y}}</p>
-                        @break
                     @case('/')
                         <p>the result of plus operation is : {{$x / $y}}</p>
                         @break
-                
+                    @case('*')
+                        <p>the result of plus operation is : {{$x * $y}}</p>
+                        @break
                     @default
                         Invalid operation system
                 @endswitch()  
