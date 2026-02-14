@@ -68,7 +68,7 @@ Route::get('/Infos1/{nom?}/{age?}', function($nom = null, $age = 0){
 
 
 Route::get('/Calcul',function(){
-    return view('Calcul',['x'=>10,'y'=>9,'operation'=>'+']);
+    return view('Calcul',['x'=>173,'y'=>9,'operation'=>'+']);
 })->name('Calcul') ;
 
 // vieu href lien redirection to an other link
@@ -82,6 +82,6 @@ Route::get('/dev',function(){
 })->name('dev') ;
 
 Route::get('Tri',function(){
-    return view('Tri', ['name' => url()->previous()]);
+    return view('tri', ['name' => url()->previous()]);
 })->name('Tri') ;
 
