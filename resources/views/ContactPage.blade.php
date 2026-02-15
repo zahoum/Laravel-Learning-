@@ -129,7 +129,7 @@
 </head>
 <body>
     <header>
-        <h1>Contact Us</h1>
+        <h1>Contact Page</h1>
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
