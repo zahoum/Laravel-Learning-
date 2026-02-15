@@ -95,7 +95,6 @@
             </ul>  
         </nav>
     </header>
-
     <main>
         <section>
             @if(request('from'))
