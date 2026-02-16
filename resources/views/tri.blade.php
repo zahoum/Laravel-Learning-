@@ -83,7 +83,7 @@
 </head>
 <body>
     <header>
-        <h1>Welcome </h1>
+        <h1>Welcome AGIN</h1>
         <nav>
             <ul>
                 <li><a href="{{ route('home',['from'=>'tri']) }}">Home</a></li>

@@ -98,7 +98,7 @@
     <main>
         <section>
             @if(request('from'))
-             <p>I come from the page {{ request('from') }}</p>
+             <p>I come from the SPECEFIQUE page {{ request('from') }}</p>
             @endif
         </section>
     </main>
