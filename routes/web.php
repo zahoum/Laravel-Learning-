@@ -91,7 +91,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MyController;
-
+use App\Http\Controllers\PostController;
 // Home Routes
 Route::get('/', function () {
     return view('HommePage');
@@ -169,3 +169,4 @@ Route::get('/Infos1/{nom?}/{age?}', function ($nom = null, $age = 0) {
 
 // Note: The default Laravel welcome page is still accessible at /welcome
 Route::get('/dev',[MyController::class,'Afficher'])->name('dev') ;
+Route::resource('produit', PostController::class);
