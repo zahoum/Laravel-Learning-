@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Article;
 
 class PostController extends Controller
 {
@@ -11,7 +12,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        echo "Hello World From PostController";
+        return view('Articles.index',['articles' => Article::all()]);
     }
 
     /**
