@@ -12,7 +12,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('Articles.index',['articles' => Article::all()]);
+        $articles = Article::all();
+        return view('Articles.index',compact('articles'));
     }
 
     /**
@@ -20,7 +21,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('Articles.create');
     }
 
     /**
@@ -28,7 +29,15 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       echo "hello from Store:";
+       // Ajout Produit
+       $pdt = new Article();
+
+       $pdt->title = $request->input('title');
+       $pdt->content = $request->input('content');
+       $pdt->save(); // souvgarder dans la base de données
+       return redirect()->route('articles.index')->with('success', 'Article created successfully!');
+
     }
 
     /**

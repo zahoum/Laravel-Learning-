@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'My Laravel App')</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.0/font/bootstrap-icons.min.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -236,12 +238,14 @@
                 <li><a href="{{ route('Calcul') }}">Calcul</a></li>
                 <li><a href="{{ route('dev') }}">Dev</a></li>
                 <li><a href="{{ route('Tri') }}">Tri</a></li>
+                <li><a href="{{ route('articles.index') }}">Articles</a></li>
+                
             </ul>
         </nav>
     </header>
 
     <main>
-        <a id="back-to-home" href="{{ route('home') }}">←</a>
+        <a id="back-to-home" href="{{ url()->previous() }}">←</a>
         
         @yield('content')
     </main>
@@ -252,5 +256,9 @@
             @yield('footer-message')
         @endif
     </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
 </body>
 </html>

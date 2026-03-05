@@ -169,4 +169,12 @@ Route::get('/Infos1/{nom?}/{age?}', function ($nom = null, $age = 0) {
 
 // Note: The default Laravel welcome page is still accessible at /welcome
 Route::get('/dev',[MyController::class,'Afficher'])->name('dev') ;
-Route::resource('produit', PostController::class);
+Route::resource('produit', PostController::class)->names([
+    'index' => 'articles.index',
+    'create' => 'articles.create',
+    'store' => 'articles.store',
+    'show' => 'articles.show',
+    'edit' => 'articles.edit',
+    'update' => 'articles.update',
+    'destroy' => 'articles.destroy',
+]);
