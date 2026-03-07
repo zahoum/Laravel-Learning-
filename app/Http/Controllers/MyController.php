@@ -28,21 +28,12 @@ use Illuminate\Http\Request;
 // }
 class MyController extends Controller
 {
-    public function Affichier()
-    {
-        $N = rand(1, 10);
-        
-        if ($N === 9)
-            {
-                $message = "Golden Number";
-                $_SESSION['affiche'] = true;
-                if(isset($_SESSION['affiche']) && $_SESSION['affiche'] == true){
-                    $message = "Vous avez déjà trouvé le nombre d'or !";
-                }
-            }else
-            {
-                $message = "Pas encore Trouver ...";
-            }
-            return view('dev',['msg' => $message]);
-    }
+    public function Afficher()
+{
+    return view('dev', [
+        'message' => 'Welcome to the developer page!',
+        'devMessage' => 'This is a custom message from the route.',
+        'msg' => 'Golden Number'
+    ]);
+}
 }

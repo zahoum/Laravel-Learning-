@@ -119,16 +119,9 @@ Route::get('/Calcul', function () {
 })->name('Calcul');
 
 // Dev Routes - Fixed duplicate route issue
-// Route::get('/dev', function () {
-//     return view('dev', [
-//         'message' => 'Welcome to the developer page!',
-//         'devMessage' => 'This is a custom message from the route.'
-//     ]);
-// })->name('dev');
+Route::get('/dev', [MyController::class, 'Afficher']);
 
 // Controller route for dev - Using different URI or removing duplicate
-Route::get('/dev-info', [MyController::class, 'Afficher'])->name('dev.info');
-
 Route::get('/Tri', function () {
     return view('tri');
 })->name('Tri');

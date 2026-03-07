@@ -14,11 +14,11 @@
         <h2>Developer Information</h2>
         <p>{{ $message ?? 'Welcome to the developer page!' }}</p>
         
-        @if(isset($devMessage))
-            <p>{{ $devMessage }}</p>
+        @if(isset($msg))
+            <p>{{ $msg }}</p>
         @endif
-        @if ($msg ==="Golden Number") 
-            <h3 style="color: gold;">{{ $msg }}</h3>
+        @if ($devMessage ==="Golden Number") 
+            <h3 style="color: gold;">{{ $devMessage }}</h3>
         @else
             <h3>{{ $msg }}</h3>
         @endif 
