@@ -119,10 +119,16 @@
     <label for="title">Article Title</label>
     <input type="text" id="title" name="title" placeholder="Enter your article title" value="{{ old('title') }}" required>
     <div class="form-helper">Give your article a clear and compelling title</div>
+    @error('title')
+        <div class="form-helper" style="color: red;">{{ $message }}</div>
+    @enderror
 
     <label for="content">Content</label>
     <textarea id="content" name="content" placeholder="Write the main content of your article here..." required>{{ old('content') }}</textarea>
     <div class="form-helper">Share your detailed article content</div>
+    @error('content')
+        <div class="form-helper" style="color: red;">{{ $message }}</div>
+    @enderror
 
     <div class="form-buttons">
         <button type="submit" class="btn-submit">

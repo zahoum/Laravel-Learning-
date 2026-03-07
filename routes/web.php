@@ -177,4 +177,4 @@ Route::resource('produit', PostController::class)->names([
     'edit' => 'articles.edit',
     'update' => 'articles.update',
     'destroy' => 'articles.destroy',
-]);
+]);   

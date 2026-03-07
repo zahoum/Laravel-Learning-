@@ -181,6 +181,7 @@
                     <td>
                         <div class="articles-actions">
                             <a href="{{ route('articles.edit', $article->id) ?? '#' }}" class="btn-small btn-edit">Edit</a>
+                            <a href="{{ route('articles.show', $article->id) }}" class="btn-small btn-view">View</a>
                             <form method="POST" action="{{ route('articles.destroy', $article->id) ?? '#' }}" style="display: inline;">
                                 @csrf
                                 @method('DELETE')

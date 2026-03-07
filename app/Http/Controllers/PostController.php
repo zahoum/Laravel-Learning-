@@ -29,8 +29,12 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-       echo "hello from Store:";
+       
        // Ajout Produit
+       $request->validate([
+        'title'=>'required|unique:articles|max:255',
+        'content'=>'required|string',
+       ]);
        $pdt = new Article();
 
        $pdt->title = $request->input('title');
@@ -45,7 +49,12 @@ class PostController extends Controller
      */
     public function show(string $id)
     {
-        //
+        echo "je suis dans show avec id = $id";
+        $P = Article::find($id);
+        if ($P == null){
+            abort(404);
+        }
+        return view('Articles.shows',compact('P'));
     }
 
     /**
