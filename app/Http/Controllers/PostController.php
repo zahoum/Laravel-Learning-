@@ -62,7 +62,12 @@ class PostController extends Controller
      */
     public function edit(string $id)
     {
-        echo "am in show" ;
+        $P = Article::find($id);
+        if ($P == null)
+            {
+                abort(404);
+            }
+        return view('Articles.edit',compact('P'));
     }
 
     /**
@@ -70,7 +75,18 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'title' => 'required/unique:articles,title,' . $id . '/max:255',
+            'content'=> 'required/string',
+        ]);
+        $P = Article::find($id);
+        if ($P == null){
+            abort(404);
+        }
+        $P->title = $request->input('title');
+        $P->content = $request->input('content');
+        $P->save();
+        return redirect()->route('articles.index')->with('success', 'Article updated successfully!');
     }
 
     /**
@@ -78,6 +94,11 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $P = Article::find($id);
+        if ($P == null){
+            abort(404);
+        }
+        $P->delete();
+        return redirect()->route('articles.index')->with('success', 'Article deleted successfully!');
     }
 }
